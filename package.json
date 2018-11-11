@@ -1,0 +1,17 @@
+{
+  "name": "tdd-lab-js",
+  "version": "1.0.0",
+  "description": "TDD exercise in Javascript for Node-js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover node_modules/mocha/bin/_mocha"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "sinon": "^7.1.1"
+  }
+}
