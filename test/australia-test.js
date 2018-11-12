@@ -28,4 +28,9 @@ describe('Australia', () => {
     const scientificnames = wombats.map((wombat) => wombat.scientificname);
     expect(scientificnames).to.include('Vombatus ursinus');
   });
+
+  it('should get wallabies', async () => {
+    const wallabies = await this.australia.wallabies();
+    console.log(wallabies);
+  })
 });

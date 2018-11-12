@@ -1,16 +1,18 @@
-var request = require('request-promise');
+const request = require('request-promise');
+const Http = require('./Http');
 
 const Australia = function() {
 
-  const url = 'https://www.data.act.gov.au/resource/ymvu-tmp4.json?commonname=Common Wombat'
+  const http = new Http;
 
   this.wombats = function() {
-    return request({
-      uri: url,
-      qs: { commonname: 'Common Wombat' },
-      json: true
-    });
+    return http.get({commonname: 'Common Wombat'});
   };
+
+  this.wallabies = function() {
+    return http.get({commonname: 'Swamp Wallaby'});
+  };
+
 };
 
 module.exports = Australia
