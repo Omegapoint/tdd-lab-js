@@ -1,18 +1,15 @@
 const request = require('request-promise');
-const Http = require('./Http');
 
-const Australia = function() {
 
-  const http = new Http;
-
-  this.wombats = function() {
-    return http.get({commonname: 'Common Wombat'});
+const australia = function(animals) {
+  return {
+    wombats: function() {
+      return animals.get({commonname: 'Common Wombat'});
+    },
+    wallabies: function() {
+      return animals.get({commonname: 'Swamp Wallaby'});
+    }
   };
-
-  this.wallabies = function() {
-    return http.get({commonname: 'Swamp Wallaby'});
-  };
-
 };
 
-module.exports = Australia
+module.exports = australia
