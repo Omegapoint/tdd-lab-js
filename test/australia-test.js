@@ -1,51 +1,38 @@
-const expect = require ('chai').expect;
+const expect = require('chai').expect;
 const animals = require('../src/animals');
 const australia = require('../src/australia');
-const geocoding = require('../src/geocoding');
 
 describe('Animals in Australia', () => {
-  var animalsInAustralia;
-  var sandbox;
+    var animalsInAustralia;
 
-  beforeEach(() => {
-    this.animalsInAustralia = australia(animals);
-  });
+    beforeEach(() => {
+        this.animalsInAustralia = australia(animals);
+    });
 
-  afterEach(() => {
-  })
+    it('should pass this canary test', () => {
+        expect(true).to.be.true;
+    });
 
-  it('should pass this canary test', () => {
-    expect(true).to.be.true;
-  });
+    function scientificnames(animals) {
+        return animals.map((animal) => animal.scientificname);
+    }
 
-  it('sweden', async () => {
-    const location = await geocoding.reverse(59.3000, 18.05000);
-    console.log(location);
-  });
+    describe('Wombats', () => {
+        it('there should be ten', async () => {
+            const wombats = await this.animalsInAustralia.wombats();
+            expect(wombats).to.have.length(10);
+        });
 
-  it('australia', async () => {
-    const location = await geocoding.reverse(148.8900, -35.4566);
-    console.log(location);
-  });
+        it('should have scientific name', async () => {
+            const wombats = await this.animalsInAustralia.wombats();
+            expect(scientificnames(wombats)).to.include('Vombatus ursinus');
+        });
+    });
 
-  it('should not have any wombats', async () => {
-    const wombats = await this.animalsInAustralia.wombats();
-    expect(wombats).to.be.empty;
-  });
-
-  it('should have two wombats', async () => {
-    const wombats = await this.animalsInAustralia.wombats();
-    expect(wombats).to.have.length(2);
-  });
-
-  it('should have scientific name', async () =>  {
-    const wombats = await this.animalsInAustralia.wombats();
-    const scientificnames = wombats.map((wombat) => wombat.scientificname);
-    expect(scientificnames).to.include('Vombatus ursinus');
-  });
-
-  it('should get wallabies', async () => {
-    const wallabies = await this.animalsInAustralia.wallabies();
-    console.log(wallabies.map(animal => animal.location_1.coordinates));
-  })
+    describe('Wallabies', () => {
+        it('should have scientific name', async () => {
+            const wallabies = await this.animalsInAustralia.wallabies();
+            expect(scientificnames(wallabies)).to.include('Wallabia bicolor');
+        })
+    });
 });

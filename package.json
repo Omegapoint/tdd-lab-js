@@ -14,9 +14,9 @@
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
+    "approvals": "^3.0.2",
     "chai": "^4.2.0",
     "istanbul": "^0.4.5",
-    "mocha": "^5.2.0",
-    "sinon": "^7.1.1"
+    "mocha": "^5.2.0"
   }
 }
