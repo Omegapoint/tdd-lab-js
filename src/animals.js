@@ -19,17 +19,17 @@ const animals = {
     get: function (queries) {
 
         const qs = queries;
-        qs['$limit'] = 10;
+        qs['$limit'] = 50;
         const response = request({
             uri: url,
             qs: qs,
             json: true
         });
         return Promise.map(response, function(animal) {
-            return {commonName: animal.commonname,
+            return {commonname: animal.commonname,
                 scientificname: animal.scientificname,
-                lat: animal.easting_mga,
-                long: animal.northing_mga
+                lat: animal.northing_mga,
+                long: animal.easting_mga
             };
         });
     }
