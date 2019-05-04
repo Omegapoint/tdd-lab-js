@@ -9,6 +9,7 @@ const australia = function (animals) {
                     return {
                         commonname: animal.commonname,
                         scientificname: animal.scientificname,
+                        date: animal.date
                     };
                 }
             );
@@ -21,6 +22,7 @@ const australia = function (animals) {
                     return {
                         commonname: animal.commonname,
                         scientificname: animal.scientificname,
+                        date: animal.date,
                         state: location.state,
                         country: location.country
                     };

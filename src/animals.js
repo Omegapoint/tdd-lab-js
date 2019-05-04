@@ -29,7 +29,8 @@ const animals = {
             return {commonname: animal.commonname,
                 scientificname: animal.scientificname,
                 lat: animal.northing_mga,
-                long: animal.easting_mga
+                long: animal.easting_mga,
+                date: animal.recorddate,
             };
         });
     }
