@@ -32,8 +32,23 @@ const australia = function (animals) {
       })
     },
     wallabies: function () {
-      const wallabies = animals.get({commonname: 'Swamp Wallaby'});
-      return Promise.map(wallabies, (animal) => {
+      const req = request({
+        uri: url,
+        qs: {
+          '$limit': 50,
+          commonname: 'Swamp Wallaby'
+        },
+        json: true
+      });
+      return Promise.map(req, (animal) => {
+        return {
+          commonname: animal.commonname,
+          scientificname: animal.scientificname,
+          lat: animal.northing_mga,
+          long: animal.easting_mga,
+          date: animal.recorddate,
+        };
+      }).map((animal) => {
         return geocoding.reverse(animal.lat, animal.long).then((locations) => {
           const location = locations.find((location) => true);
           return {
