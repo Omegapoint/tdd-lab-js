@@ -12,11 +12,11 @@ Eller ladda ned från:
 
 Hämta koden:
 
-    git clone  https://github.com/Omegapoint/surviving-javascript.git
+    git clone  git@github.com:Omegapoint/surviving-javascript.git
 
 eller:
 
-    git clone https://github.com/Omegapoint/tdd-lab-js.git
+    git clone git@github.com:Omegapoint/tdd-lab-js.git
 
 Installera grunk:
 
