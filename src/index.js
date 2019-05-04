@@ -1,6 +1,5 @@
 const Promise = require("bluebird");
 const express = require('express');
-const animals = require('./animals');
 const australia = require('./australia');
 
 const app = express();
