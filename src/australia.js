@@ -15,7 +15,7 @@ const australia = function (animals) {
         },
         json: true
       });
-      return Promise.map(Promise.map(req, function (animal) {
+      return Promise.map(req, (animal) => {
         return {
           commonname: animal.commonname,
           scientificname: animal.scientificname,
@@ -23,15 +23,13 @@ const australia = function (animals) {
           long: animal.easting_mga,
           date: animal.recorddate,
         };
-      }), (animal) => {
-            return {
-              commonname: animal.commonname,
-              scientificname: animal.scientificname,
-              date: animal.date
-            };
-          }
-        )
-        .catch((e) => console.log(e));
+      }).map((animal) => {
+        return {
+          commonname: animal.commonname,
+          scientificname: animal.scientificname,
+          date: animal.date
+        };
+      })
     },
     wallabies: function () {
       const wallabies = animals.get({commonname: 'Swamp Wallaby'});
@@ -51,4 +49,4 @@ const australia = function (animals) {
   };
 };
 
-module.exports = australia
+module.exports = australia;
