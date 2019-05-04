@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const animals = require('../src/animals');
 const australia = require('../src/australia');
 
