@@ -29,6 +29,7 @@ describe('The Animals in Australia API', () => {
     it('should respond with expected wombats', (done) => {
       request(app).get('/wombats').then((response) => {
         expect(response.statusCode).toBe(200);
+        expect(response.body).toEqual(JSON.parse(fs.readFileSync('test/testdata/wombats.json')));
         done();
       });
     });
