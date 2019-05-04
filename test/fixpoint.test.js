@@ -38,9 +38,11 @@ describe('The Animals in Australia API', () => {
   describe('/wombats', () => {
 
     it('should respond with expected wombats', (done) => {
+      const expectedWombats = JSON.parse(fs.readFileSync('test/testdata/wombats.json'));
+
       request(app).get('/wombats').then((response) => {
         expect(response.statusCode).toBe(200);
-        expect(response.body).toEqual(JSON.parse(fs.readFileSync('test/testdata/wombats.json')));
+        expect(response.body).toIncludeSameMembers(expectedWombats.map((wombat) => expect.objectContaining(wombat)));
         done();
       });
     });

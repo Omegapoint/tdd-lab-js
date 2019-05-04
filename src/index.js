@@ -8,7 +8,7 @@ const port = 8080;
 
 app.get('/wombats', async (req, res, next) => {
     try {
-        const wombats = await australia(animals).wombats();
+        const wombats = await australia().wombats();
         res.json(wombats);
     }
     catch (e) {
@@ -17,7 +17,7 @@ app.get('/wombats', async (req, res, next) => {
 });
 app.get('/wallabies', async (req, res, next) => {
     try {
-        let wallabies = await australia(animals).wallabies();
+        let wallabies = await australia().wallabies();
         res.json(wallabies);
     }
     catch (e) {
