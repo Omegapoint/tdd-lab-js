@@ -1,4 +1,5 @@
 const request = require('supertest');
+const nock = require('nock');
 const fs = require('fs');
 
 describe('The Animals in Australia API', () => {
@@ -6,6 +7,16 @@ describe('The Animals in Australia API', () => {
   let app;
 
   beforeAll(async () => {
+
+    nock('https://www.data.act.gov.au/resource/ymvu-tmp4.json')
+      .get(/.*/)
+      .query((query) => query.commonname ==='Common Wombat')
+      .reply(200, JSON.parse(fs.readFileSync('test/testdata/wombat_response.json')));
+    nock('https://www.data.act.gov.au/resource/ymvu-tmp4.json')
+      .get(/.*/)
+      .query((query) => query.commonname ==='Swamp Wallaby')
+      .reply(200, JSON.parse(fs.readFileSync('test/testdata/wallaby_response.json')));
+
     app = await require('../src/index');
   });
 
