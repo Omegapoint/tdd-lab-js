@@ -1,11 +1,16 @@
 const request = require('supertest');
+const fs = require('fs');
 
 describe('The Animals in Australia API', () => {
 
   let app;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     app = await require('../src/index');
+  });
+
+  afterAll((done) => {
+    app.close(done);
   });
 
   describe('/wallabies', () => {

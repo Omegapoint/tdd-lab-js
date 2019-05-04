@@ -25,9 +25,11 @@ app.get('/wallabies', async (req, res, next) => {
     }
 });
 
-let appStarted = new Promise((resolve, reject) => app.listen(port, () => {
-    console.log(`Animals in Australia listening on port ${port}!`);
-    resolve(app);
-}));
+const appStarted = new Promise((resolve, reject) => {
+    const server = app.listen(port, (something) => {
+        console.log(`Animals in Australia listening on port ${port}!`);
+        resolve(server);
+    })
+});
 
 module.exports = appStarted;
