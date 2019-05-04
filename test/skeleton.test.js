@@ -18,6 +18,7 @@ describe('The Animals in Australia API', () => {
     it('should respond with expected wallabies', (done) => {
       request(app).get('/wallabies').then((response) => {
         expect(response.statusCode).toBe(200);
+        expect(response.body).toEqual(JSON.parse(fs.readFileSync('test/testdata/wallabies.json')));
         done();
       });
     });
