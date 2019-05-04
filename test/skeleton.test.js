@@ -1,12 +1,31 @@
-const australia = require('../src/australia');
+const request = require('supertest');
 
-describe('Animals in Australia', () => {
+describe('The Animals in Australia API', () => {
 
-    beforeEach(() => {
-        console.log('I run before each test')
+  let app;
+
+  beforeEach(async () => {
+    app = await require('../src/index');
+  });
+
+  describe('/wallabies', () => {
+
+    it('should respond with expected wallabies', (done) => {
+      request(app).get('/wallabies').then((response) => {
+        expect(response.statusCode).toBe(200);
+        done();
+      });
     });
+  });
 
-    it('should pass this canary test', () => {
-        expect('canary').toEqual('canary');
+  describe('/wombats', () => {
+
+    it('should respond with expected wombats', (done) => {
+      request(app).get('/wombats').then((response) => {
+        expect(response.statusCode).toBe(200);
+        done();
+      });
     });
+  });
+
 });
