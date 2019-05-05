@@ -1,10 +1,9 @@
-const geocoding = require('./geocoding');
 
-const australia = function (animalService) {
+const australia = function (animalService, geocodingService) {
 
     function fetchAnimals(name) {
         return animalService.fetchAnimals(name).map((animal) => {
-            return geocoding.reverse(animal.lat, animal.long).then((locations) => {
+            return geocodingService.reverse(animal.lat, animal.long).then((locations) => {
                 const location = locations.find((location) => true);
                 return {
                     commonname: animal.commonname,
@@ -22,6 +21,7 @@ const australia = function (animalService) {
             return fetchAnimals('Common Wombat');
         },
         wallabies: function () {
+            const redNeckedWallabies = fetchAnimals('Red-necked wallaby');
             return fetchAnimals('Swamp Wallaby');
         }
     };

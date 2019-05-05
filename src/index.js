@@ -2,13 +2,14 @@ const Promise = require("bluebird");
 const express = require('express');
 const australia = require('./australia');
 const animalService = require('./animalService');
+const geocodingService = require('./geocoding');
 
 const app = express();
 const port = 8080;
 
 app.get('/wombats', async (req, res, next) => {
     try {
-        const wombats = await australia(animalService).wombats();
+        const wombats = await australia(animalService, geocodingService).wombats();
         res.json(wombats);
     }
     catch (e) {
@@ -17,7 +18,7 @@ app.get('/wombats', async (req, res, next) => {
 });
 app.get('/wallabies', async (req, res, next) => {
     try {
-        let wallabies = await australia(animalService).wallabies();
+        let wallabies = await australia(animalService, geocodingService).wallabies();
         res.json(wallabies);
     }
     catch (e) {

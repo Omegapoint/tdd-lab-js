@@ -16,6 +16,11 @@ describe('The Animals in Australia API', () => {
       .get(/.*/)
       .query((query) => query.commonname ==='Swamp Wallaby')
       .reply(200, JSON.parse(fs.readFileSync('test/testdata/wallaby_response.json')));
+    nock('https://www.data.act.gov.au/resource/ymvu-tmp4.json')
+      .get(/.*/)
+      .query((query) => query.commonname ==='Red-necked wallaby')
+      .reply(200, JSON.parse(fs.readFileSync('test/testdata/wallaby_response.json')));
+
     nock('http://www.datasciencetoolkit.org')
       .get(/\/coordinates2politics\/.*/)
       .reply(200, JSON.parse(fs.readFileSync('test/testdata/location.json')))
