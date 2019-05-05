@@ -55,7 +55,8 @@ Några tips:
 TODO: lägg in lämpliga exempel här
 
     npm start
-    curl xxxx
+    curl localhost:8080/wombats
+    curl localhost:8080/wallabies
 
 Tid: 20m (50m)
 
