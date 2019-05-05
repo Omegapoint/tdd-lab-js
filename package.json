@@ -2,6 +2,7 @@
   "name": "tdd-lab-js",
   "version": "1.0.0",
   "description": "TDD exercise in Javascript for Node-js.",
+  "repository": "http://github.com/omegapoint/tdd-lab-js",
   "main": "index.js",
   "scripts": {
     "test": "jest",
