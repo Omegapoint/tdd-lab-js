@@ -28,9 +28,9 @@ describe('Australia', () => {
     expect(animalServiceMock.fetchAnimals).toHaveBeenCalledWith('Red-necked wallaby');
   });
 
-  it.skip('should return two types of wallabies', async () => {
+  it('should return two types of wallabies', async () => {
     const wallaby = {
-      commonname: 'Swamp Wallaby',
+      commonname: 'Some wallaby',
     };
     animalServiceMock.fetchAnimals
       .mockReturnValue(Promise.resolve([wallaby]));
