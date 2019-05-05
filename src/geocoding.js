@@ -25,6 +25,8 @@ const geocode = {
                 state: admin4.name,
                 country: admin2.name
             };
+        }).catch((e) => {
+            console.log(e);
         });
     }
 };
