@@ -1,0 +1,22 @@
+[
+  {
+    "politics": [
+      {
+        "type": "admin2",
+        "friendly_type": "country",
+        "name": "Australia",
+        "code": "aus"
+      },
+      {
+        "type": "admin4",
+        "friendly_type": "state",
+        "name": "Australian Capital Territory",
+        "code": "rs05"
+      }
+    ],
+    "location": {
+      "latitude": 49.0,
+      "longitude": 131.0
+    }
+  }
+]
