@@ -52,6 +52,9 @@ angreppssätt. Diskutera!
 
 Några tips:
 
+TODO: lägg in lämpliga exempel här
+
+    npm start
     curl xxxx
 
 Tid: 20m (50m)
@@ -60,6 +63,8 @@ Tid: 20m (50m)
 
 Som en demonstration?
 Visa mockning och testverktyg.
+
+TODO: Skapa färdiga copy-paste-steg
 
 Tid: 20m (1h 10m)
 
@@ -75,11 +80,15 @@ Tid: 20 min (2h 10m)
 
 Inkl. mindre tester.
 
+TODO: Testa att uppgiften blir enklare på utbruten modul
+
 Tid: 30m (2h 40m)
 
 ## Inför ändringen
 
 Skriv tester för det nya beteendet på modulen och och inför ändringen.
+
+TODO: provkör!
 
 Tid: 1h (3h 40)
 
