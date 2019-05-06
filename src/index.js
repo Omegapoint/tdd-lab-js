@@ -5,6 +5,9 @@ const australia = require('./australia');
 const app = express();
 const port = 8080;
 
+app.get('/healthcheck', async (req, res, next) => {
+    res.json({message: 'ok'});
+});
 app.get('/wombats', async (req, res, next) => {
     try {
         const wombats = await australia().wombats();
