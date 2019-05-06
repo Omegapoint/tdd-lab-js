@@ -28,7 +28,16 @@ Tid: 0m
 ## Intro
 
 Kolla förkunskaper och förväntningar.
+
 Beskriv uppgiften. Vad ska ändras?
+
+Vårt företag, Animals in Australia, levererar ett API som rapporterar
+observationer av djur i Austrialen. Den första versionen av produkten stödjer
+djur på "W"; wombats och wallabies.
+Vår produktägare upptäcker att man missat att ta med Rednecked Wallabies utan bara
+har Swamp Wallabies i svaret. Tyvärr har utvecklarna av tjänsten tagit tjänstledigt
+i 6 månader för en walkabout i den australiensiska ödemarken. Produktägaren kommer till
+ditt lag och undrar om ni kan lösa problemet.
 
 Tid: 10m
 
@@ -36,12 +45,11 @@ Tid: 10m
 
 Man ärver kod utan tester och med oklar struktur. Kanske utan dokumentation. Vad göra?
 
-- Hitta fixpunkter
-- Fixera
-- Lätt att skriva test?
-- Extrahera en modul (beroende injektion)
-- Om ja: Gör ändringen!
-- Annars...
+- Hitta fixpunkter och fixera
+- Lätt att skriva test för beteendet?
+- Om ja: Skriv ett fallerande test och implementera ändringen.
+- Om inte: Extrahera en modul (beroende injektion) och fixera modulen
+
 
 Tid: 20m (30m)
 
@@ -51,8 +59,6 @@ Hur angriper man detta? Ta en stund och titta igenom koden och föreslå
 angreppssätt. Diskutera!
 
 Några tips:
-
-TODO: lägg in lämpliga exempel här
 
     npm start
     curl localhost:8080/wombats
