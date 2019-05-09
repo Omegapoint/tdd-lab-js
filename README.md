@@ -12,17 +12,20 @@ Eller ladda ned från:
 
 Hämta koden:
 
-    git clone  git@github.com:Omegapoint/surviving-javascript.git
-
-eller:
-
     git clone git@github.com:Omegapoint/tdd-lab-js.git
 
 Installera grunk:
 
     npm install
+    
+Kolla att det går att starta appen:
+
     npm start
 
+Kolla att det går att köra tester:
+
+    npm test
+    
 Tid: 0m
 
 ## Intro
