@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Animals in Australia API /wallabies should respond with ok 1`] = `
+Array [
+  Object {
+    "commonname": "Swamp Wallaby",
+    "country": "Australia",
+    "date": "1/04/1987",
+    "scientificname": "Wallabia bicolor",
+    "state": "Australian Capital Territory",
+  },
+  Object {
+    "commonname": "Swamp Wallaby",
+    "country": "Australia",
+    "date": "16/07/1995",
+    "scientificname": "Wallabia bicolor",
+    "state": "Australian Capital Territory",
+  },
+]
+`;
+
+exports[`The Animals in Australia API /wombats should respond with ok 1`] = `
+Array [
+  Object {
+    "commonname": "Common Wombat",
+    "country": "Australia",
+    "date": "12/07/2015",
+    "scientificname": "Vombatus ursinus",
+    "state": "Australian Capital Territory",
+  },
+  Object {
+    "commonname": "Common Wombat",
+    "country": "Australia",
+    "date": "14/01/1986",
+    "scientificname": "Vombatus ursinus",
+    "state": "Australian Capital Territory",
+  },
+]
+`;
