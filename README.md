@@ -106,6 +106,13 @@ Tid: 1h (3h 40)
 
 Tid: 20m (4h)
 
+## Verktygslåda
+
+- Jest (https://devhints.io/jest): Testramverk
+- Nock (https://github.com/nock/nock): Mockning av HTTP-anrop
+- Jest-extended (https://github.com/jest-community/jest-extended): Fler matchers för Jest
+
+
 
 
 
