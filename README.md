@@ -1,5 +1,13 @@
 # Överleva gammal kod (och Javascript)
 
+## Förkunskaper
+
+- Grundläggande Javascript och node.js (om inte; kör introduktion på Javascript)
+
+- TDD
+
+- Refaktorisering
+
 ## Förberedelser (om man inte mobbar)
 
 Installera nodejs. MacOS med brew:
@@ -43,6 +51,12 @@ i 6 månader för en walkabout i den australiensiska ödemarken. Produktägaren 
 ditt lag och undrar om ni kan lösa problemet.
 
 Tid: 10m
+
+## JavaScript intro (om deltagarna inte är så vana vid Javascript)
+
+Gå igenom ett kodexempel som visar exempel på t.ex. promises. geocode.js?
+
+Tid: 20m
 
 ## Metoden
 
