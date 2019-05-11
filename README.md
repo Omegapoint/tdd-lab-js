@@ -1,3 +1,7 @@
+TODO: Förenkla koden ytterligare; ta bort geocoding-tjänsten och ersätt med lite
+affärslogik, query parameter eller sortering t.ex.
+
+
 # Överleva gammal kod (och Javascript)
 
 ## Förkunskaper
