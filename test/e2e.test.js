@@ -29,7 +29,7 @@ describe('Animals in Australia', () => {
         nock('https://www.data.act.gov.au/resource/ymvu-tmp4.json')
             .get(/.*/)
             .query({
-                '$limit': 1,
+                '$limit': 50,
                 commonname: 'Common Wombat'
             })
             .reply(200, [wombat()])
@@ -38,7 +38,7 @@ describe('Animals in Australia', () => {
         nock('https://www.data.act.gov.au/resource/ymvu-tmp4.json')
             .get(/.*/)
             .query({
-                '$limit': 1,
+                '$limit': 50,
                 commonname: 'Swamp Wallaby'
             })
             .reply(200, [wombat()])
@@ -68,40 +68,51 @@ describe('Animals in Australia', () => {
         app.close(done);
     });
 
-    describe("find wombats", () => {
-        it("should return none", (done) => {
+    describe("/wombats", () => {
+        it("should return ok", (done) => {
             request(app).get('/wombats').then((response) => {
-                console.log(response.body)
-                expect(response.body).toHaveLength(0);
+                expect(response.statusCode).toEqual(200);
                 done();
             });
         });
 
-        it("should return one", (done) => {
+        it("should return one wombat", (done) => {
+            request(app).get('/wombats').then((response) => {
+                expect(response.body).toHaveLength(1);
+                done();
+            });
+        });
 
+        it("should return a wombat with state", (done) => {
             request(app).get('/wombats').then((response) => {
                 console.log(response.body);
-                expect(response.body).toHaveLength(1);
+                expect(response.body[0].state).toEqual('Australian Capital Territory');
+                done();
+            });
+        });
+
+        it("should return a wombat with country", (done) => {
+            request(app).get('/wombats').then((response) => {
+                console.log(response.body);
+                expect(response.body[0].country).toEqual('Australia');
                 done();
             });
         });
 
     })
 
-    describe('/healthcheck', () => {
-
-        it('should respond with 200', (done) => {
-            request(app).get('/healthcheck').then((response) => {
+    describe('/wallabies', () => {
+        it('should return ok', (done) => {
+            request(app).get('/wallabies').then((response) => {
                 expect(response.statusCode).toBe(200);
                 done();
             });
         });
     });
 
-    describe('/wallabies', () => {
-
-        it('should respond with expected wallabies', (done) => {
-            request(app).get('/wallabies').then((response) => {
+    describe('/healthcheck', () => {
+        it('should return ok', (done) => {
+            request(app).get('/healthcheck').then((response) => {
                 expect(response.statusCode).toBe(200);
                 done();
             });
