@@ -93,7 +93,6 @@ describe('Animals in Australia', () => {
 
         it("should return a wombat with country", (done) => {
             request(app).get('/wombats').then((response) => {
-                console.log(response.body);
                 expect(response.body[0].country).toEqual('Australia');
                 done();
             });
