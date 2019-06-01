@@ -1,10 +1,9 @@
 const Promise = require('bluebird');
 const request = require('request-promise');
-const geocoding = require('./geocoding');
 
 const url = 'https://www.data.act.gov.au/resource/ymvu-tmp4.json';
 
-const australia = function () {
+const australia = function (geocoding) {
 
     function fetchAnimals(name) {
         const req = request({

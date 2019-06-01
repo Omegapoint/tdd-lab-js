@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node src/index.js"
+    "start": "PORT=8080 node src/index.js"
   },
   "author": "",
   "license": "MIT",
